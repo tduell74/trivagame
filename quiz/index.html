@@ -1,0 +1,76 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+
+	<title>My quiz</title>
+
+	<link href="style.css" rel="stylesheet">
+
+	<script src="main.js"></script>
+
+</head>
+
+<body>
+
+ <h1><center>Test Your Knowledge!</center></h1>
+
+
+  <form id="quiz" name="quiz">
+
+   <p>How many superbowls have the Dallas cowboys won?</p>
+
+  <input type="radio" id="multipleChoice" name="question1" value="five"> five<br>
+  <input type="radio" id="multipleChoice" name="question1" value="two"> two<br>
+  <input type="radio" id="multipleChoice" name="question1" value="They never won"> They never won
+     
+     <p>Which of the traditional five senses are dolphins believed not to possess?</p>
+   
+  <input type="radio" id="multipleChoice" name="question2" value="smell"> smell<br>
+  <input type="radio" id="multipleChoice" name="question2" value="sight"> sight<br>
+  <input type="radio" id="multipleChoice" name="question2" value="other"> hearing
+
+    <p>In The Lord of The Rings actor Ian Mckellen(Gandalf) also stars in witch major film seris?</p>
+
+  <input type="radio" id="multipleChoice" name="question3" value="Star Trek"> Star Trek<br>
+  <input type="radio" id="multipleChoice" name="question3" value="Xmen"> Xmen<br>
+  <input type="radio" id="multipleChoice" name="question3" value="Pirates of the Caribbean"> Pirates of the Caribbean<br>
+
+    
+    <p>My favorite team</p>
+
+  <input type="radio" id="multipleChoice" name="question4" value="cowboys"> Cowboys<br>
+  <input type="radio" id="multipleChoice" name="question4" value="female"> eagles<br>
+  <input type="radio" id="multipleChoice" name="question4" value="other"> Giants<br>
+
+  <input id="button" type="button" value="I'm finished!" onclick="check();">
+  	
+  </form>
+
+  <div id="afterSubmit">
+
+  <p id="message"></p>
+  <p id="numberCorrect"></p>
+  <img id = "picture">
+  
+  </div>
+
+  <script type="text/javascript">
+    function countDown(sconds,elements) {
+      var element = document.getElementById(elements);
+      element.innerHTML = "You only have " + seconds + " sconds left.. HURRY!";
+      if(seconds < 1) {
+        clearTimeout(timer);
+        element.innerHTML = "<h2>You ran out of time!</h2>";
+      }
+      seconds--;
+      var timer = setTimeout('countDown('+seconds+',"'+elements+'")',1000);
+    }
+
+  </script>
+  <div id="status"></div>
+  <script type="text/javascript">countDown(30,"status");</script>
+
+</body>
+
+</html>
